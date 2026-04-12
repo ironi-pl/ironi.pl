@@ -1,0 +1,521 @@
+---
+
+---
+
+<div id="container">
+	<main>
+		<section id="hero">
+			<h1 id="title"></h1>
+		</section>
+	</main>
+</div>
+
+<script>
+	// const words = ["everything", "is"];
+	const words = [".everything is everything."];
+	const fontFamilies = [
+		"Bitcount Grid Double",
+		"Bungee Outline",
+		"Cherry Bomb One",
+		"Dancing Script",
+		"Dokdo",
+		"Emilys Candy",
+		"Fascinate Inline",
+		"Henny Penny",
+		"Jacquard 24",
+		"Kenia",
+		"Kranky",
+		"Love Ya Like A Sister",
+		"Megrim",
+		"Modak",
+		"Monofett",
+		"Monoton",
+		"Neonderthaw",
+		"Palette Mosaic",
+		"Plaster",
+		"Potta One",
+		"Protest Revolution",
+		"Rampart One",
+		"Rock 3D",
+		"Rock Salt",
+		"Rubik Burned",
+		"Rubik Glitch",
+		"Rubik Lines",
+		"Rubik Maps",
+		"Shizuru",
+		"Sirin Stencil",
+		"Slackey",
+		"Special Elite",
+		"Tangerine",
+		"Tilt Prism",
+		"Uncial Antiqua",
+		"UnifrakturMaguntia",
+		"VT323",
+		"Zeyada",
+	];
+
+	const title = document.getElementById("title");
+	let wordIndex = 0;
+
+	function randomFont() {
+		const i = Math.floor(Math.random() * fontFamilies.length);
+		return fontFamilies[i];
+	}
+
+	function renderWord() {
+		const word = words[wordIndex];
+
+		title.innerHTML = [...word]
+			.map((char) => {
+				const font = randomFont();
+				return `<span class="letter" style="font-family: ${font};">${char}</span>`;
+			})
+			.join("");
+
+		wordIndex = (wordIndex + 1) % words.length;
+	}
+
+	function getRandomDelay(min: number, max: number) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function runAtRandomIntervals() {
+		const delay = getRandomDelay(800, 1800);
+		setTimeout(() => {
+			renderWord();
+			runAtRandomIntervals();
+		}, delay);
+	}
+
+	renderWord();
+	runAtRandomIntervals();
+</script>
+
+<style>
+	/* FONTS */
+	/* bitcount-grid-double-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Bitcount Grid Double";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/bitcount-grid-double-v3-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* bungee-outline-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Bungee Outline";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/bungee-outline-v24-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* cherry-bomb-one-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Cherry Bomb One";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/cherry-bomb-one-v11-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* dancing-script-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Dancing Script";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/dancing-script-v29-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* dokdo-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Dokdo";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/dokdo-v23-latin-regular.woff2") format("woff2");
+	}
+
+	/* emilys-candy-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Emilys Candy";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/emilys-candy-v21-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* fascinate-inline-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Fascinate Inline";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/fascinate-inline-v24-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* henny-penny-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Henny Penny";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/henny-penny-v18-latin-regular.woff2") format("woff2");
+	}
+
+	/* jacquard-24-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Jacquard 24";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/jacquard-24-v4-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* kenia-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Kenia";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/kenia-v30-latin-regular.woff2") format("woff2");
+	}
+
+	/* kranky-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Kranky";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/kranky-v29-latin-regular.woff2") format("woff2");
+	}
+
+	/* love-ya-like-a-sister-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Love Ya Like A Sister";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/love-ya-like-a-sister-v23-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* megrim-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Megrim";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/megrim-v18-latin-ext-regular.woff2") format("woff2");
+	}
+
+	/* modak-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Modak";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/modak-v21-latin-ext-regular.woff2") format("woff2");
+	}
+
+	/* monofett-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Monofett";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/monofett-v24-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* monoton-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Monoton";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/monoton-v22-latin-ext-regular.woff2") format("woff2");
+	}
+
+	/* neonderthaw-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Neonderthaw";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/neonderthaw-v8-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* palette-mosaic-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Palette Mosaic";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/palette-mosaic-v13-latin-regular.woff2")
+			format("woff2");
+	}
+
+	/* plaster-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Plaster";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/plaster-v25-latin-ext-regular.woff2") format("woff2");
+	}
+
+	/* potta-one-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Potta One";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/potta-one-v19-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* protest-revolution-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Protest Revolution";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/protest-revolution-v2-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* rampart-one-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Rampart One";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/rampart-one-v13-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* rock-3d-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Rock 3D";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/rock-3d-v13-latin-regular.woff2") format("woff2");
+	}
+
+	/* rock-salt-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Rock Salt";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/rock-salt-v24-latin-regular.woff2") format("woff2");
+	}
+
+	/* rubik-burned-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Rubik Burned";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/rubik-burned-v1-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* rubik-glitch-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Rubik Glitch";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/rubik-glitch-v2-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* rubik-lines-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Rubik Lines";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/rubik-lines-v1-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* rubik-maps-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Rubik Maps";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/rubik-maps-v1-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* shizuru-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Shizuru";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/shizuru-v13-latin-regular.woff2") format("woff2");
+	}
+
+	/* sirin-stencil-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Sirin Stencil";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/sirin-stencil-v27-latin-regular.woff2")
+			format("woff2");
+	}
+
+	/* slackey-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Slackey";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/slackey-v29-latin-regular.woff2") format("woff2");
+	}
+
+	/* special-elite-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Special Elite";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/special-elite-v20-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* tangerine-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Tangerine";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/tangerine-v18-latin-regular.woff2") format("woff2");
+	}
+
+	/* tilt-prism-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Tilt Prism";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/tilt-prism-v16-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* uncial-antiqua-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Uncial Antiqua";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/uncial-antiqua-v22-latin-ext-regular.woff2")
+			format("woff2");
+	}
+
+	/* unifrakturmaguntia-regular - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "UnifrakturMaguntia";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/unifrakturmaguntia-v22-latin-regular.woff2")
+			format("woff2");
+	}
+
+	/* vt323-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "VT323";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/vt323-v18-latin-ext-regular.woff2") format("woff2");
+	}
+
+	/* zeyada-regular - latin-ext */
+	@font-face {
+		font-display: swap;
+		font-family: "Zeyada";
+		font-style: normal;
+		font-weight: 400;
+		src: url("../fonts/zeyada-v22-latin-ext-regular.woff2") format("woff2");
+	}
+
+	body {
+		margin: 40px;
+
+		/* light */
+		/* background: #f5f5f5; */
+		/* color: #222; */
+
+		/* dark */
+		color: #f5f5f5;
+		background: #222;
+
+		/* black and white */
+		/* color: #ffffff; */
+		/* background: #000000; */
+	}
+
+	.letter {
+		display: inline-block;
+	}
+
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		filter: blur(100px);
+	}
+
+	#container {
+		font-family:
+			Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+			sans-serif;
+		height: clamp(20vh, 80vh, 100vh);
+	}
+
+	main {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	#hero {
+		display: flex;
+		align-items: start;
+		/* align-items: center; */
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		padding: 10vw;
+		/* padding: 16px; */
+	}
+
+	h1 {
+		/* font-size: 6rem; */
+		font-size: clamp(2rem, 6vw, 6rem);
+		margin-bottom: 0.5rem;
+		margin-top: 0.5em;
+	}
+</style>

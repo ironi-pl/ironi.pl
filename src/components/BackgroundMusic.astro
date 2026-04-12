@@ -1,0 +1,20 @@
+---
+import myAudio from "/audio/music-bg.wav";
+---
+
+<div class="player">
+  <audio controls autoplay loop preload="auto">
+    <source src={myAudio} type="audio/wav" />
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<style>
+  .player {
+    height: clamp(5vh, 10vh, 20vh);
+    padding: 1rem;
+    padding-top: 10vh;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 8px; */
+  }
+</style>
