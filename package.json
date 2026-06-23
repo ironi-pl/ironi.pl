@@ -9,16 +9,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "deploy": "npm run build && wrangler deploy"
+    "astro": "astro"
   },
   "dependencies": {
     "astro": "^6.1.4"
   },
   "devDependencies": {
     "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1",
-    "@astrojs/cloudflare": "^14.0.0",
-    "wrangler": "^4.103.0"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
